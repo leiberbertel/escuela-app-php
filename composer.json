@@ -1,0 +1,8 @@
+{   
+    "name": "leiberbertel/escuela-app",
+    "description": "Es una sitio web sencilla para administrar una escuela (en desarrollo)",
+    "version": "1.0.1",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
