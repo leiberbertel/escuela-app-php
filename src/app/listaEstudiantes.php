@@ -21,7 +21,7 @@
     require_once "../../config.php";
 
     $sql = "SELECT * FROM alumnos";
-    $result = $con->query($sql);
+    $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
                 $contador = 0;
