@@ -1,14 +1,12 @@
 <?php
 require_once "../config.php";
 
-// Inicializar variables
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 $nombres = "";
 $apellido_paterno = "";
 $apellido_materno = "";
 
 if($id) {
-    // Usar sentencias preparadas para prevenir inyección SQL
     $stmt = $con->prepare("SELECT * FROM alumnos WHERE id_alumnos = ?");
     $stmt->bind_param("i", $id);
     
@@ -25,7 +23,6 @@ if($id) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Sanear las entradas
     $nombres = $con->real_escape_string($_POST['nombres']);
     $apellido_paterno = $con->real_escape_string($_POST['apellido_paterno']);
     $apellido_materno = $con->real_escape_string($_POST['apellido_materno']);
