@@ -7,29 +7,18 @@
   <meta name="author" content="Leiber Bertel">
   <meta name="description" content="Sitio web para estudiantes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="../img/school.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/img/school.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-sm  nav-header">
-    <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="../index.html">Registro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Lista de estudiantes</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <?php include "../includes/nav.php"; ?>
   <div class="container mt-5">
     <h3 class="text-center">Lista de estudiantes</h3>
     <hr>
     <?php
 
-    require_once "../config.php";
+    require_once "../../config.php";
 
     $sql = "SELECT * FROM alumnos";
     $result = $con->query($sql);
@@ -70,15 +59,8 @@
             }
     ?>
 
-<section class="container">
-    <footer class="py-3 my-5">
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="../index.html" class="nav-link px-2">Registro</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2">Lista de estudiantes</a></li>
-      </ul>
-      <p class="text-center">&copy; 2023 <a class="text-light" target="_blank"
-          href="https://leiberbertel.github.io">Leiber Bertel</a></p>
-    </footer>
+  <section class="container">
+    <?php include "../includes/footer.php"; ?>
   </section>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
