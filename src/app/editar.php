@@ -1,6 +1,5 @@
 <?php
-$editado = false;
-
+$error = false;
 require_once "../../config.php";
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -33,10 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("sssi", $nombres, $apellido_paterno, $apellido_materno, $id);
     
     if ($stmt->execute()) {
-        $editado = true;
         header('location: listaEstudiantes.php');
     } else {
-        $editado = false;
+        $error = true;
     }
     $stmt->close();
 }
@@ -79,28 +77,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <?php if ($editado): ?>
-  <script>
-    swal.fire({
-      title: '¡Excelente!',
-      text: 'El Estudiante ha sido actualizado exitosamente',
-      icon: 'success',
-      confirmButtonText: 'Ok',
-      customClass: {
-        popup: 'popup-class',
-        title: 'title-class',
-        confirmButton: 'button-class'
-      }
-    });
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+  
   </script>
-  <?php endif; ?>
-
-  <?php if (!$editado): ?>
+  <?php if ($error): ?>
   <script>
     swal.fire({
       title: '¡Oopps!',
       text: 'Algo ha salido mal',
-      icon: 'danger',
+      icon: 'error',
       confirmButtonText: 'Ok',
       customClass: {
         popup: 'popup-class',
