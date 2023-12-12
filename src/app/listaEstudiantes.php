@@ -42,8 +42,8 @@
                     echo '<p class="card-text"><em>Apellido paterno:</em> ' . $paterno . '</p>';
                     echo '<p class="card-text"><em>Apellido materno:</em> ' . $materno . '</p>';
                     echo '<div class="btn-group d-flex justify-content-between">';
-                    echo '<a class="nav-link link-crud btn-action btn-outline-secondary px-1 text-center gap-2" href="editar.php?id=' . $row['id_alumnos'] . '">Editar alumno</a>';
-                    echo '<a class="nav-link link-crud btn-action btn-outline-secondary text-center" href="eliminar.php?id=' . $row['id_alumnos'] . '">Eliminar alumno</a>';                    
+                    echo '<a class="nav-link link-crud btn-action btn-outline-secondary px-1 text-center gap-2" href="editar.php?id=' . $row['id'] . '">Editar alumno</a>';
+                    echo '<a class="nav-link link-crud btn-action btn-outline-secondary text-center" href="eliminar.php?id=' . $row['id'] . '">Eliminar alumno</a>';                    
                     echo '</div>';
                     echo '</div>';
                     echo '</div>';

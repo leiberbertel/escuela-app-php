@@ -1,3 +1,26 @@
+<?php
+
+require_once "../../config.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombres = $_POST['nombres'];
+    $paterno = $_POST['paterno'];
+    $materno = $_POST['materno'];
+
+    $sql = "INSERT INTO alumnos (nombres, apellido_paterno, apellido_materno)
+            VALUES ('$nombres', '$paterno', '$materno')";
+
+    if ($conn->query($sql) === TRUE) {
+        header("Location: listaEstudiantes.php");
+        exit();
+    } else {
+        echo "Error al guardar los datos: " . $con->error;
+    }
+
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,17 +39,16 @@
 
   <section class="container mt-4 w-50">
     <h3 class="text-center">Registro de estudiantes</h3>
-    <form action="app/guardar.php" method="post" enctype="multipart/form-data">
-      <div class="mb-3 mt-3">
-      <div class="mb-3">
+    <form action="register.php" method="post" enctype="multipart/form-data">
+      <div class="mb-3 input-custom">
         <label for="nombres">Nombres:</label>
         <input class="form-control" required placeholder="Ingresa tus nombres" name="nombres">
       </div>
-      <div class="mb-3">
+      <div class="mb-3 input-custom">
         <label for="paterno">Apellido paterno:</label>
         <input class="form-control" required placeholder="Ingresa el apellido paterno" name="paterno">
       </div>
-      <div class="mb-3">
+      <div class="mb-3 input-custom">
         <label for="materno">Apellido materno:</label>
         <input class="form-control" required placeholder="Ingresa el apellido materno" name="materno">
       </div>
