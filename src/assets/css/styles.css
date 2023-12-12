@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: Verdana, sans-serif;
   background-color: #1b1b1b;
@@ -52,7 +51,13 @@ body {
   color: #cdcdcd;
 }
 
-
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 input[type="checkbox"] {
   -webkit-appearance: none;
@@ -77,12 +82,14 @@ input[type="checkbox"]:checked {
   border: none;
 }
 
+.input-custom {
+  width: 60%;
+}
 
 input[class="form-control"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 100%;
   height: 40px;
   background-color: white;
   border-radius: 4px;
@@ -92,7 +99,6 @@ input[class="form-control"]:focus {
   outline: none;
   box-shadow: 0px 0px 5px 2px #fc5a6a;
 }
-
 
 .card {
   border-radius: 5px;
@@ -111,7 +117,6 @@ h3 {
   padding: 15px;
   color: #FFF;
   text-align: center;
-  text-transform: capitalize;
   border-radius: 5px;
 }
 
@@ -146,7 +151,7 @@ h3 {
   padding: 5px;
   font-size: 16pt;
   display: block;
-  margin: 23px auto;
+  margin: 6px auto;
   border-radius: 5px;
   text-align: center;
 }
@@ -158,10 +163,11 @@ h3 {
   letter-spacing: 1px;
   border: 0;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 #container form input[type="submit"]:hover {
-  background: #3988ff;
+  background: #f7727f;
 }
 
 #alert {
@@ -170,4 +176,29 @@ h3 {
   font-size: 16px;
   text-align: center;
   color: #fff;
+}
+
+.swal2-popup.popup-class {
+  background-color: #1b1b1b;
+}
+
+.swal2-title.title-class {
+  color: #fff;
+}
+
+.swal2-html-container {
+  color: #fff !important;
+}
+
+.swal2-confirm.button-class {
+  background-color: #fc5a6a;
+}
+
+.swal2-confirm.button-class {
+  color: #fff;
+}
+
+.icon-close {
+  position: absolute;
+  right: 20px;
 }
